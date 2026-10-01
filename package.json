@@ -1,0 +1,22 @@
+{
+  "name": "wiki-plugin-login",
+  "version": "0.1.1",
+  "description": "Easy Login for a Keycloak-backed wiki farm: a change-your-password form on a wiki page, and an owner-only desk that creates batches of users with a common default password. No pop-ups, no other domain.",
+  "type": "module",
+  "main": "client/login.js",
+  "files": ["client", "pages", "server", "factory.json"],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test test/*.test.js",
+    "test:live": "node test/live-keycloak.cjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "author": "David Bovill",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-login.git" },
+  "bugs": { "url": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-login/issues" },
+  "homepage": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-login#readme"
+}

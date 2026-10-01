@@ -1,0 +1,79 @@
+{
+  "title": "About Login Plugin",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "f27831266d971139",
+      "text": "The **Login Plugin** puts the login server on a wiki page. One item type, `login`, with two faces: a form to change your own password, and an owner's desk that creates a batch of logins with a common password. No pop-up, no other domain: everything happens on this page, through this wiki's own server."
+    },
+    {
+      "type": "markdown",
+      "id": "fd1d62dd3d85c631",
+      "text": "# Change\n\n> Three boxes. The username is the login you are using, never typed."
+    },
+    {
+      "type": "login",
+      "id": "f22cfc84975919fb",
+      "text": "CHANGE\nThis is the live form. It only works on a wiki whose farm is connected to the login server; off-grid it says so and switches itself off."
+    },
+    {
+      "type": "markdown",
+      "id": "1152c20e762cfdec",
+      "text": "The server first proves your current password with the farm's own client, then resets it through a service account that may do nothing but manage users. Nothing is kept: the old password is checked and forgotten, the new one is sent once. Eight tries per address per quarter hour."
+    },
+    {
+      "type": "markdown",
+      "id": "e316ff259395cb45",
+      "text": "# Desk\n\n> One line per person: username, Display Name."
+    },
+    {
+      "type": "markdown",
+      "id": "b257cc7c702bb68f",
+      "text": "An item whose text begins `DESK` shows the desk, and only to the owner of the wiki it sits on. Paste the people, type the common password, press the button. Each line becomes an enabled user whose password is not temporary, so their first login lands on the wiki and not on the login server's own screens. Lines that already exist are reported, not changed."
+    },
+    {
+      "type": "markdown",
+      "id": "e2686e5ea83178d8",
+      "text": "# Commands\n\n> UPPERCASE first word, the rest is the page's own words."
+    },
+    {
+      "type": "markdown",
+      "id": "536fe2e861405741",
+      "text": "**CHANGE** draws the change-password form (the default when the text is empty). **DESK** draws the owner's desk. Any lines after the command are shown above the form as a note."
+    },
+    {
+      "type": "markdown",
+      "id": "5096aa6a191a4c8e",
+      "text": "# Server\n\n> Three routes under /plugin/login/."
+    },
+    {
+      "type": "markdown",
+      "id": "e0b4040766b986c6",
+      "text": "`status` says who the session is and whether the farm can reach the login server. `change` takes the current and new password for the session's own user. `desk` takes a roster and a common password and is refused unless the session is the wiki's owner. The farm's Keycloak is found from its own `oauth2_TokenURL`; the service-account secret lives in `~/.config/wiki-login/secret` (mode 600) or wherever `WIKI_LOGIN_SECRET` points."
+    },
+    {
+      "type": "markdown",
+      "id": "f8747ad9b88b723a",
+      "text": "# See\n\n- [[Login Plugin]]\n- [[Your Login]]\n- [[Where Your Words Go]]"
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "id": "f27831266d971139",
+      "item": {
+        "title": "About Login Plugin",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "f27831266d971139",
+            "text": "The **Login Plugin** puts the login server on a wiki page. One item type, `login`, with two faces: a form to change your own password, and an owner's desk that creates a batch of logins with a common password. No pop-up, no other domain: everything happens on this page, through this wiki's own server."
+          }
+        ]
+      },
+      "date": 1790875116239,
+      "provenance": "Authored by an AI agent \u2014 Claude Code via the [[fedwiki-create-plugin]] skill, in dialogue with David Bovill for the Transmediale Design Sprint, October 2026. [https://claude.com/claude-code Claude Code]"
+    }
+  ],
+  "plugin": "login"
+}
